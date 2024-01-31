@@ -40,12 +40,14 @@ public class VacationDetails extends AppCompatActivity {
     String hotel;
     double price;
     int vacationID;
+    String vacaTimeline;
     String startVacationDate;
     String endVacationDate;
     EditText editName;
     EditText editPrice;
     EditText editHotel;
     TextView editStartVacaDate;
+    TextView vacationTimeline;
     TextView editEndVacaDate;
     Vacation currentVacation;
     int numExcursions;
@@ -61,11 +63,14 @@ public class VacationDetails extends AppCompatActivity {
         setContentView(R.layout.activity_vacation_details);
         FloatingActionButton fab=findViewById(R.id.floatingActionButton);
 
+
         editName = findViewById(R.id.titletext);
+        vacationTimeline = findViewById(R.id.timelinetext);
         editPrice = findViewById(R.id.pricetext);
         editHotel = findViewById(R.id.hoteltext);
         editStartVacaDate = findViewById(R.id.startvacationdate);
         editEndVacaDate = findViewById(R.id.endvacationdate);
+        vacaTimeline = getIntent().getStringExtra("vacaTimeline");
         name = getIntent().getStringExtra("name");
         hotel = getIntent().getStringExtra("hotel");
         price = getIntent().getDoubleExtra("price", 0.0);
@@ -73,6 +78,7 @@ public class VacationDetails extends AppCompatActivity {
         endVacationDate = getIntent().getStringExtra("endVacationDate");
         editName.setText(name);
         editHotel.setText(hotel);
+        vacationTimeline.setText(vacaTimeline);
         editPrice.setText(Double.toString(price));
         vacationID = getIntent().getIntExtra("id", -1);
         editStartVacaDate.setText(startVacationDate);
@@ -80,7 +86,8 @@ public class VacationDetails extends AppCompatActivity {
         String myFormat = "MM/dd/yy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
-        Log.d("DebugTag", "name: " + name + " vacationID: " + vacationID + " Hotel: " + hotel + ", startVacationDate: " + startVacationDate + ", endVacationDate: " + endVacationDate);
+
+        Log.d("DebugTag", "name: " + name + " vacationID: " + vacationID + " Hotel: " + hotel + ", startVacationDate: " + startVacationDate + ", endVacationDate: " + endVacationDate + ", vacationTimeline " + vacaTimeline);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -179,6 +186,15 @@ public class VacationDetails extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
+
+        if(vacaTimeline == null) {
+            for (Vacation vaca : repository.getAllVacations()) {
+                if (vaca.getVacationID() == vacationID) currentVacation = vaca;
+            }
+            vacaTimeline = currentVacation.getVacaTimeline();
+            vacationTimeline.setText(vacaTimeline);
+        } else {
+        }
     }
 
     private void updateLabelStart() {
@@ -193,6 +209,8 @@ public class VacationDetails extends AppCompatActivity {
 
         editEndVacaDate.setText(sdf.format(myCalendarEnd.getTime()));
     }
+
+
 
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_vacationdetails, menu);
@@ -211,18 +229,24 @@ public class VacationDetails extends AppCompatActivity {
         if(item.getItemId()== android.R.id.home){
             this.finish();
             return true;}
+        if (item.getItemId() == R.id.searchPage) {
+            // Start the ReportPage activity
+            Intent intent = new Intent(this, ReportPage.class);
+            startActivity(intent);
+            return true;
+        }
         if(item.getItemId()== R.id.vacationsave) {
             Vacation vacation;
             if (vacationID==-1) {
                 if (repository.getAllVacations().size() == 0) vacationID = 1;
                 else
                     vacationID = repository.getAllVacations().get(repository.getAllVacations().size() - 1).getVacationID() + 1;
-                vacation = new Vacation(vacationID, editName.getText().toString(), Double.parseDouble(editPrice.getText().toString()), editHotel.getText().toString(), editStartVacaDate.getText().toString(), editEndVacaDate.getText().toString());
+                vacation = new Vacation(vacationID, editName.getText().toString(), Double.parseDouble(editPrice.getText().toString()), editHotel.getText().toString(), editStartVacaDate.getText().toString(), editEndVacaDate.getText().toString(), vacaTimeline);
                 repository.insert(vacation);
                 this.finish();
             }
             else{
-                vacation = new Vacation(vacationID, editName.getText().toString(), Double.parseDouble(editPrice.getText().toString()), editHotel.getText().toString(), editStartVacaDate.getText().toString(), editEndVacaDate.getText().toString());
+                vacation = new Vacation(vacationID, editName.getText().toString(), Double.parseDouble(editPrice.getText().toString()), editHotel.getText().toString(), editStartVacaDate.getText().toString(), editEndVacaDate.getText().toString(), vacaTimeline);
                 repository.update(vacation);
                 this.finish();
             }
@@ -328,18 +352,6 @@ public class VacationDetails extends AppCompatActivity {
 
 
 
-//                Long triggerStart = myStartDate.getTime();
-//                Intent intentStart = new Intent(VacationDetails.this, MyVacationReceiver.class);
-//                intentStart.putExtra("key", "Vacation Start: " + getIntent().getStringExtra("name"));
-//                PendingIntent senderStart = PendingIntent.getBroadcast(VacationDetails.this, ++MainActivity.numAlert, intentStart, PendingIntent.FLAG_IMMUTABLE);
-//                alarmManager.set(AlarmManager.RTC_WAKEUP, triggerStart, senderStart);
-//
-//                // End Date Alarm
-//                Long triggerEnd = myEndDate.getTime();
-//                Intent intentEnd = new Intent(VacationDetails.this, MyVacationReceiver.class);
-//                intentEnd.putExtra("key2", "Vacation End: " + getIntent().getStringExtra("name"));
-//                PendingIntent senderEnd = PendingIntent.getBroadcast(VacationDetails.this, ++MainActivity.numAlert2, intentEnd, PendingIntent.FLAG_IMMUTABLE);
-//                alarmManager.set(AlarmManager.RTC_WAKEUP, triggerEnd, senderEnd);
             } catch (Exception e){
                 e.printStackTrace();
             }

@@ -187,6 +187,12 @@ public class ExcursionDetails extends AppCompatActivity {
 //                Intent intent=new Intent(PartDetails.this,MainActivity.class);
 //                startActivity(intent);
 //                return true;
+        if (item.getItemId() == R.id.searchPage) {
+            // Start the ReportPage activity
+            Intent intent = new Intent(this, ReportPage.class);
+            startActivity(intent);
+            return true;
+        }
 
         if (item.getItemId()== R.id.excursionsave){
             Excursion excursion;

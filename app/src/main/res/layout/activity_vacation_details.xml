@@ -11,6 +11,7 @@
         android:id="@+id/scrollView2"
         android:layout_width="411dp"
         android:layout_height="253dp"
+        android:layout_marginTop="4dp"
         android:background="#CFC5E3"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -132,8 +133,24 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/excursionrecyclerview"
-        android:layout_width="412dp"
-        android:layout_height="389dp"
+        android:layout_width="387dp"
+        android:layout_height="323dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.21" />
+
+    <TextView
+        android:id="@+id/timelinetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/excursionrecyclerview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

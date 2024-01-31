@@ -9,4 +9,7 @@
     <item android:title="Set Alarm"
         android:orderInCategory="100"
         android:id="@+id/notify"/>
+    <item android:title="Search Here"
+        android:orderInCategory="100"
+        android:id="@+id/searchPage"/>
 </menu>

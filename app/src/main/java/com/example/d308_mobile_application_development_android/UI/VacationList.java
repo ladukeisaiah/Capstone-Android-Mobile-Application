@@ -63,14 +63,20 @@ public class VacationList extends AppCompatActivity {
         repository=new Repository(getApplication());
         if(item.getItemId()==R.id.mysampleme) {
             //Toast.makeText(VacationList.this,"put in sample data", Toast.LENGTH_LONG).show();
-            Vacation vacation=new Vacation(0, "bicycle vacation", 100.0, "Maryland Stay","02/20/24", "02/28/24");
+            Vacation vacation=new Vacation(0, "bicycle vacation", 100.0, "Maryland Stay","02/20/24", "02/28/24", "");
             repository.insert(vacation);
-            vacation = new Vacation(0,"Hawaii", 600.0,"Larabar Hotel","02/20/24", "02/28/24");
+            vacation = new Vacation(0,"Hawaii", 600.0,"Larabar Hotel","02/20/24", "02/28/24", "");
             repository.insert(vacation);
             Excursion excursion = new Excursion(0, "Snorkeling", 200.0, 1, "02/21/24");
             repository.insert(excursion);
             excursion = new Excursion(0, "Sail Boatin'", 400.0, 1, "02/21/24");
             repository.insert(excursion);
+            return true;
+        }
+        if (item.getItemId() == R.id.searchPage) {
+            // Start the ReportPage activity
+            Intent intent = new Intent(this, ReportPage.class);
+            startActivity(intent);
             return true;
         }
         if(item.getItemId()==android.R.id.home){

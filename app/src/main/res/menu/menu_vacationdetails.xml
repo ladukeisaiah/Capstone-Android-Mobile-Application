@@ -12,4 +12,7 @@
     <item android:title="Set Alarms"
         android:orderInCategory="100"
         android:id="@+id/vacationnotify"/>
+    <item android:title="Search Here"
+        android:orderInCategory="100"
+        android:id="@+id/searchPage"/>
 </menu>

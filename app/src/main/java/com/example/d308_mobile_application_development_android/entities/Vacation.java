@@ -5,8 +5,9 @@ import androidx.room.PrimaryKey;
 
 import java.util.Date;
 
+
 @Entity(tableName = "vacations")
-public class Vacation {
+public class Vacation extends AbstractVacation{
 
     @PrimaryKey(autoGenerate = true)
     private int vacationID;
@@ -17,7 +18,11 @@ public class Vacation {
     private String endVacationDate;
     private String hotel;
 
-    public Vacation(int vacationID, String vacationName, double price, String hotel, String startVacationDate, String endVacationDate) {
+    private String vacaTimeline;
+
+
+
+    public Vacation(int vacationID, String vacationName, double price, String hotel, String startVacationDate, String endVacationDate, String vacaTimeline) {
         this.vacationID = vacationID;
         this.vacationName = vacationName;
         this.price = price;
@@ -71,5 +76,21 @@ public class Vacation {
 
     public String getEndVacationDate() {
         return endVacationDate;
+    }
+
+    @Override
+    public String vacationTimeline() {
+        vacaTimeline = "This is the vacation timeline: " + this.getVacationName() + " vacation begins on " +
+                this.getStartVacationDate() + " and it ends on " + this.getEndVacationDate();
+        return vacaTimeline;
+    }
+
+    public String getVacaTimeline() {
+        return vacationTimeline();
+    };
+
+    @Override
+    public double calculateTotalCost() {
+        return 0;
     }
 }
