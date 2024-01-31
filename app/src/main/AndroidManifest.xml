@@ -25,6 +25,7 @@
             android:exported="true" />
 
         <activity android:name=".UI.ReportPage"
+            android:label="Search &amp; Reports page"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />

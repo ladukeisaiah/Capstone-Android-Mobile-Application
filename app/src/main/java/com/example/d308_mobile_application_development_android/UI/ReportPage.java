@@ -62,7 +62,7 @@ public class ReportPage extends AppCompatActivity {
         tableLayout2.removeAllViews();
 
         // Add header row for vacations table
-        addHeaderRow(tableLayout, "ID", "Name", "Price", "Hotel", "Start Date", "End Date");
+        addHeaderRow(tableLayout, "ID", "Title", "Price", "Hotel", "Start Date", "End Date");
 
         List<Vacation> vacations = new ArrayList<>();
         List<Integer> vacationIds = new ArrayList<>();
@@ -127,7 +127,7 @@ public class ReportPage extends AppCompatActivity {
 
     private void performExcursionSearch(List<Integer> vacationIds) {
         // Add header row for excursions table
-        addHeaderRow(tableLayout2, "Vacation ID", "Excursion ID", "Name", "Price", "Date");
+        addHeaderRow(tableLayout2, "Vacation ID", "Excursion ID", "Title", "Price", "Date");
 
         List<Excursion> excursions = repository.getAllExcursions();
         for (Excursion excursion : excursions) {
