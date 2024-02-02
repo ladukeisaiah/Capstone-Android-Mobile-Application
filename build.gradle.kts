@@ -3,14 +3,14 @@ plugins {
     id("com.android.application") version "8.2.1" apply false
     id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
 }
-extra["roomVersion"] = "2.6.1"
+extra["roomVersion"] = "2.5.2"
 buildscript {
     // Define your roomVersion here if it's within the buildscript block
-    extra["roomVersion"] = "2.6.1"
+    extra["roomVersion"] = "2.5.2"
 }
     // Define extra properties for all subprojects
 allprojects {
-    extra["roomVersion"] = "2.6.1"
+    extra["roomVersion"] = "2.5.2"
 }
 
 
