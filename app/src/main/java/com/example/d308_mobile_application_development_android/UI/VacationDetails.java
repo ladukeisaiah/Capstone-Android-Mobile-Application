@@ -1,9 +1,5 @@
 package com.example.d308_mobile_application_development_android.UI;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.PendingIntent;
@@ -19,6 +15,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.d308_mobile_application_development_android.Database.Repository;
 import com.example.d308_mobile_application_development_android.R;
 import com.example.d308_mobile_application_development_android.entities.Excursion;
@@ -27,7 +27,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -70,7 +69,6 @@ public class VacationDetails extends AppCompatActivity {
         editHotel = findViewById(R.id.hoteltext);
         editStartVacaDate = findViewById(R.id.startvacationdate);
         editEndVacaDate = findViewById(R.id.endvacationdate);
-        vacaTimeline = getIntent().getStringExtra("vacaTimeline");
         name = getIntent().getStringExtra("name");
         hotel = getIntent().getStringExtra("hotel");
         price = getIntent().getDoubleExtra("price", 0.0);
@@ -78,14 +76,12 @@ public class VacationDetails extends AppCompatActivity {
         endVacationDate = getIntent().getStringExtra("endVacationDate");
         editName.setText(name);
         editHotel.setText(hotel);
-        vacationTimeline.setText(vacaTimeline);
         editPrice.setText(Double.toString(price));
         vacationID = getIntent().getIntExtra("id", -1);
         editStartVacaDate.setText(startVacationDate);
         editEndVacaDate.setText(endVacationDate);
         String myFormat = "MM/dd/yy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
 
         Log.d("DebugTag", "name: " + name + " vacationID: " + vacationID + " Hotel: " + hotel + ", startVacationDate: " + startVacationDate + ", endVacationDate: " + endVacationDate + ", vacationTimeline " + vacaTimeline);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -187,13 +183,24 @@ public class VacationDetails extends AppCompatActivity {
             }
         });
 
+        vacaTimeline = getIntent().getStringExtra("vacaTimeline");
         if(vacaTimeline == null) {
+            boolean found = false;
             for (Vacation vaca : repository.getAllVacations()) {
-                if (vaca.getVacationID() == vacationID) currentVacation = vaca;
+                if (vaca.getVacationID() == vacationID) {
+                    currentVacation = vaca;
+                    found = true;
+                    break; // Stop the loop once the vacation is found
+                }
             }
-            vacaTimeline = currentVacation.getVacaTimeline();
+            if (found) {
+                vacaTimeline = currentVacation.getVacaTimeline();
+            } else {
+                vacaTimeline = ""; // Assign a default value or handle the absence of vacation data appropriately
+            }
             vacationTimeline.setText(vacaTimeline);
         } else {
+            vacationTimeline.setText(vacaTimeline);
         }
     }
 
