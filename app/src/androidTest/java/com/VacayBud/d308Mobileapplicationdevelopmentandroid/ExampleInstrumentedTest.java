@@ -1,4 +1,4 @@
-package com.example.d308_mobile_application_development_android;
+package com.VacayBud.d308Mobileapplicationdevelopmentandroid;
 
 import static org.junit.Assert.assertEquals;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.d308_mobile_application_development_android", appContext.getPackageName());
+        assertEquals("com.example.d308Mobileapplicationdevelopmentandroidtest", appContext.getPackageName());
     }
 }

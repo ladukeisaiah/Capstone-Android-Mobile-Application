@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.d308_mobile_application_development_android"
+    namespace = "com.VacayBud.d308Mobileapplicationdevelopmentandroid"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.d308_mobile_application_development_android"
+        applicationId = "com.VacayBud.d308Mobileapplicationdevelopmentandroid"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

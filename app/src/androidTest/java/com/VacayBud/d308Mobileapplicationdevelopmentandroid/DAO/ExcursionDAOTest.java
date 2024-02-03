@@ -1,4 +1,4 @@
-package com.example.d308_mobile_application_development_android.DAO;
+package com.VacayBud.d308Mobileapplicationdevelopmentandroid.DAO;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -9,9 +9,9 @@ import android.content.Context;
 import androidx.room.Room;
 import androidx.test.platform.app.InstrumentationRegistry;
 
-import com.example.d308_mobile_application_development_android.Database.Repository;
-import com.example.d308_mobile_application_development_android.Database.VacationDatabaseBuilder;
-import com.example.d308_mobile_application_development_android.entities.Excursion;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.Database.Repository;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.Database.VacationDatabaseBuilder;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.entities.Excursion;
 
 import org.junit.After;
 import org.junit.Before;

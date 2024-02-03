@@ -1,4 +1,4 @@
-package com.example.d308_mobile_application_development_android.UI;
+package com.VacayBud.d308Mobileapplicationdevelopmentandroid.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,14 +19,13 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.d308_mobile_application_development_android.Database.Repository;
-import com.example.d308_mobile_application_development_android.R;
-import com.example.d308_mobile_application_development_android.entities.Excursion;
-import com.example.d308_mobile_application_development_android.entities.Vacation;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.Database.Repository;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.R;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.entities.Excursion;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.entities.Vacation;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package com.example.d308_mobile_application_development_android.entities;
+package com.VacayBud.d308Mobileapplicationdevelopmentandroid.entities;
 
 import androidx.room.PrimaryKey;
 

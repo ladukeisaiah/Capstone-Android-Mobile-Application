@@ -1,4 +1,4 @@
-package com.example.d308_mobile_application_development_android;
+package com.VacayBud.d308Mobileapplicationdevelopmentandroid;
 
 import static org.junit.Assert.assertEquals;
 

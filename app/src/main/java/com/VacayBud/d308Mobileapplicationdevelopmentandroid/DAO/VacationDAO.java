@@ -1,4 +1,4 @@
-package com.example.d308_mobile_application_development_android.DAO;
+package com.VacayBud.d308Mobileapplicationdevelopmentandroid.DAO;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -7,7 +7,7 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.d308_mobile_application_development_android.entities.Vacation;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.entities.Vacation;
 
 import java.util.List;
 @Dao

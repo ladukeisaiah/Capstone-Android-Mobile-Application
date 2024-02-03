@@ -1,8 +1,4 @@
-package com.example.d308_mobile_application_development_android.UI;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+package com.VacayBud.d308Mobileapplicationdevelopmentandroid.UI;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,14 +6,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.d308_mobile_application_development_android.Database.Repository;
-import com.example.d308_mobile_application_development_android.R;
-import com.example.d308_mobile_application_development_android.entities.Excursion;
-import com.example.d308_mobile_application_development_android.entities.Vacation;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.Database.Repository;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.R;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.entities.Excursion;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.entities.Vacation;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.time.Instant;
-import java.util.Date;
 import java.util.List;
 
 public class VacationList extends AppCompatActivity {

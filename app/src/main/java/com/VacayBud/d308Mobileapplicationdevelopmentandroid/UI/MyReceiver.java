@@ -1,4 +1,4 @@
-package com.example.d308_mobile_application_development_android.UI;
+package com.VacayBud.d308Mobileapplicationdevelopmentandroid.UI;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
 
@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 
-import com.example.d308_mobile_application_development_android.R;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.R;
 
 public class MyReceiver extends BroadcastReceiver {
 

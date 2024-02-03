@@ -15,6 +15,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "com.example.d308_mobile_application_development_android"
+rootProject.name = "com.example.d308Mobileapplicationdevelopmentandroidtest"
 include(":app")
  

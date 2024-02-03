@@ -1,4 +1,4 @@
-package com.example.d308_mobile_application_development_android.UI;
+package com.VacayBud.d308Mobileapplicationdevelopmentandroid.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -12,13 +12,10 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.example.d308_mobile_application_development_android.R;
-import com.example.d308_mobile_application_development_android.Database.Repository;
-import com.example.d308_mobile_application_development_android.R;
-import com.example.d308_mobile_application_development_android.entities.Excursion;
-import com.example.d308_mobile_application_development_android.entities.Vacation;
-
-import org.w3c.dom.Text;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.Database.Repository;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.R;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.entities.Excursion;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.entities.Vacation;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.d308_mobile_application_development_android.UI;
+package com.VacayBud.d308Mobileapplicationdevelopmentandroid.UI;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,9 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.d308_mobile_application_development_android.DAO.ExcursionDAO;
-import com.example.d308_mobile_application_development_android.R;
-import com.example.d308_mobile_application_development_android.entities.Excursion;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.R;
+import com.VacayBud.d308Mobileapplicationdevelopmentandroid.entities.Excursion;
 
 import java.util.List;
 
